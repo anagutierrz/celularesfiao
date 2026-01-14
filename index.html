@@ -2,9 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celularesfiao Partners | La Red de Financiamiento #1 de RD y Colombia</title>
-    <meta name="description" content="Haz crecer tu tienda de celulares financiando equipos con Celularesfiao Partners. Cobro en 24h y aprobación inmediata.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Celularesfiao Partners | Red de Financiamiento RD & Colombia</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -17,69 +16,100 @@
             --border-glass: rgba(255, 255, 255, 0.1);
         }
 
+        * { box-sizing: border-box; }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0; background: var(--bg-dark); color: #fff;
-            line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth;
+            line-height: 1.5; overflow-x: hidden; width: 100%;
         }
 
         .aurora {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: radial-gradient(circle at 0% 0%, #031e40 0%, transparent 40%),
                         radial-gradient(circle at 100% 100%, #1c723e 20%, transparent 40%);
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
+        /* Header Adaptable */
         header {
-            padding: 15px 8%; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(1, 6, 13, 0.9); backdrop-filter: blur(15px);
+            padding: 12px 5%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(1, 6, 13, 0.95); backdrop-filter: blur(10px);
             position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-glass);
         }
-        .logo { font-weight: 800; font-size: 1.4rem; text-decoration: none; color: #fff; }
+        .logo { font-weight: 800; font-size: 1.1rem; text-decoration: none; color: #fff; flex-shrink: 0; }
         .logo span { color: var(--accent-green); }
 
-        .nav-btns { display: flex; gap: 15px; }
-        .btn-acc { border: 1px solid var(--accent-green); color: var(--accent-green); padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
-        .btn-acc:hover { background: var(--accent-green); color: #fff; }
-        .btn-afi { background: var(--accent-green); color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); }
+        .nav-btns { display: flex; gap: 8px; }
+        .btn-acc { border: 1px solid var(--accent-green); color: var(--accent-green); padding: 8px 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.75rem; }
+        .btn-afi { background: var(--accent-green); color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.75rem; }
 
-        /* Hero */
-        .hero { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
-        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 25px; }
-        .hero-text h1 span { color: var(--accent-green); }
-        .hero-text p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 35px; }
-        .hero-img img { width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid var(--border-glass); }
-
-        /* Stats & Trusted By */
-        .trusted { padding: 40px 8%; background: rgba(255,255,255,0.02); text-align: center; }
-        .trusted-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; align-items: center; opacity: 0.5; filter: grayscale(1); }
-        .trusted-grid i { font-size: 2.5rem; }
-
-        /* Robust Info Section */
-        .info-section { padding: 100px 8%; }
-        .info-header { text-align: center; margin-bottom: 60px; }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .info-card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 24px; border: 1px solid var(--border-glass); }
-        .info-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; }
-        .info-card i { font-size: 2rem; color: var(--accent-green); margin-bottom: 15px; }
-
-        /* Mapa y Expansión */
-        .expansion { padding: 100px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; background: rgba(0,0,0,0.3); }
-        .map-placeholder { background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80'); height: 400px; border-radius: 30px; background-size: cover; background-position: center; border: 1px solid var(--border-glass); }
-
-        /* Form Section */
-        .form-section { padding: 100px 8%; display: flex; justify-content: center; }
-        .form-box { background: #010811; border: 1px solid var(--border-glass); padding: 50px; border-radius: 30px; width: 100%; max-width: 600px; }
-
-        .input-field { margin-bottom: 20px; }
-        .input-field label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--accent-green); }
-        .input-field input, .input-field select { width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; color: #fff; box-sizing: border-box; }
-        .btn-primary { width: 100%; background: var(--accent-green); color: #fff; padding: 20px; border: none; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; }
-
-        @media (max-width: 968px) {
-            .hero, .expansion { grid-template-columns: 1fr; text-align: center; }
-            .hero-img { order: -1; }
+        /* Hero Optimizado */
+        .hero { 
+            padding: 40px 5%; 
+            display: flex; flex-direction: column; 
+            text-align: center; gap: 30px;
         }
+        .hero-text h1 { font-size: 2.2rem; line-height: 1.1; margin-bottom: 15px; font-weight: 800; }
+        .hero-text h1 span { color: var(--accent-green); }
+        .hero-text p { font-size: 1rem; color: var(--text-gray); margin-bottom: 25px; padding: 0 10px; }
+        
+        .hero-img { width: 100%; max-width: 500px; margin: 0 auto; }
+        .hero-img img { width: 100%; border-radius: 20px; border: 1px solid var(--border-glass); height: auto; display: block; }
+
+        /* Trusted - Marquee para Móvil */
+        .trusted { padding: 30px 5%; background: rgba(255,255,255,0.02); overflow: hidden; }
+        .trusted-grid { display: flex; justify-content: space-around; align-items: center; gap: 20px; opacity: 0.5; }
+        .trusted-grid i { font-size: 1.8rem; }
+
+        /* Cards - Scroll Vertical en Móvil */
+        .info-section { padding: 60px 5%; }
+        .info-header { text-align: center; margin-bottom: 40px; }
+        .info-header h2 { font-size: 1.8rem; }
+        .info-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .info-card { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 20px; border: 1px solid var(--border-glass); }
+        .info-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
+        .info-card h3 { font-size: 1.3rem; margin: 10px 0; }
+
+        /* Expansión */
+        .expansion { padding: 60px 5%; background: rgba(0,0,0,0.2); }
+        .expansion-text h2 { font-size: 1.8rem; text-align: center; margin-bottom: 20px; }
+        .map-placeholder { 
+            width: 100%; height: 250px; border-radius: 20px; 
+            background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80') center/cover;
+            margin-bottom: 30px; border: 1px solid var(--border-glass);
+        }
+        .expansion-list { padding: 0; list-style: none; }
+        .expansion-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+
+        /* Formulario Limpio */
+        .form-section { padding: 60px 5%; }
+        .form-box { background: #010811; border: 1px solid var(--border-glass); padding: 30px 20px; border-radius: 20px; width: 100%; }
+        .form-box h2 { font-size: 1.6rem; text-align: center; margin-bottom: 10px; }
+        .form-box p { font-size: 0.9rem; text-align: center; color: var(--text-gray); margin-bottom: 25px; }
+
+        .input-field { margin-bottom: 15px; }
+        .input-field label { display: block; font-size: 0.85rem; margin-bottom: 5px; color: var(--accent-green); font-weight: 600; }
+        .input-field input, .input-field select { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 10px; color: #fff; font-size: 1rem; -webkit-appearance: none; }
+
+        .btn-primary { width: 100%; background: var(--accent-green); color: #fff; padding: 16px; border: none; border-radius: 10px; font-weight: 800; font-size: 1rem; cursor: pointer; }
+
+        /* Media Query para Escritorio */
+        @media (min-width: 968px) {
+            header { padding: 15px 8%; }
+            .logo { font-size: 1.4rem; }
+            .btn-acc, .btn-afi { padding: 10px 20px; font-size: 0.9rem; }
+            .hero { padding: 100px 8%; grid-template-columns: 1fr 1fr; text-align: left; display: grid; }
+            .hero-text h1 { font-size: 3.8rem; }
+            .hero-text p { padding: 0; font-size: 1.2rem; }
+            .info-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+            .expansion { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 100px 8%; align-items: center; }
+            .expansion-text h2 { text-align: left; font-size: 2.5rem; }
+            .map-placeholder { margin-bottom: 0; height: 400px; }
+            .form-box { padding: 50px; max-width: 600px; }
+        }
+
+        footer { padding: 40px 5%; text-align: center; border-top: 1px solid var(--border-glass); font-size: 0.8rem; opacity: 0.6; }
     </style>
 </head>
 <body>
@@ -97,20 +127,18 @@
 <main>
     <section class="hero">
         <div class="hero-text">
-            <h1>Convierte tu tienda en una <span>máquina de ventas.</span></h1>
-            <p>Únete a la red de +500 tiendas que ya financian con nosotros en RD y Colombia. Tú entregas el equipo, nosotros te pagamos en 24h.</p>
-            <a href="#registro" class="btn-afi" style="padding: 18px 40px; font-size: 1.1rem;">EMPEZAR A VENDER HOY</a>
+            <h1>Vende más con <span>Financiamiento.</span></h1>
+            <p>Únete a +500 tiendas en RD y Colombia. Nosotros ponemos el capital, tú entregas el equipo y cobras al contado.</p>
+            <a href="#registro" class="btn-afi" style="padding: 15px 30px; font-size: 1rem; display: inline-block;">EMPEZAR AHORA</a>
         </div>
         <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Tienda de celulares moderna">
+            <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Tienda Partners">
         </div>
     </section>
 
     <section class="trusted">
-        <p style="margin-bottom: 30px; opacity: 0.6; font-weight: 700; letter-spacing: 2px;">NUESTROS ALIADOS TECNOLÓGICOS</p>
         <div class="trusted-grid">
             <i class="fab fa-apple"></i>
-            <i class="fab fa-google-pay"></i>
             <i class="fab fa-samsung"></i>
             <i class="fab fa-android"></i>
             <i class="fab fa-aws"></i>
@@ -119,26 +147,18 @@
 
     <section class="info-section">
         <div class="info-header">
-            <h2>¿Por qué elegir Celularesfiao Partners?</h2>
+            <h2>Beneficios Partner</h2>
         </div>
         <div class="info-grid">
             <div class="info-card">
-                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Pagos rápidos">
-                <i class="fas fa-bolt"></i>
-                <h3>Liquidación Express</h3>
-                <p>No esperes semanas. Recibe el pago total de tus ventas financiadas directamente en tu cuenta en menos de 24 horas laborables.</p>
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Pagos">
+                <h3>Pago en 24h</h3>
+                <p>Liquidamos tus ventas financiadas directamente en tu cuenta bancaria al día siguiente.</p>
             </div>
             <div class="info-card">
-                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=500&q=80" alt="Seguridad">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Cero Riesgo Crediticio</h3>
-                <p>Nosotros asumimos el riesgo de cobro. Si el cliente se atrasa, es nuestro problema. Tu tienda siempre mantiene su ganancia intacta.</p>
-            </div>
-            <div class="info-card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Crecimiento">
-                <i class="fas fa-chart-line"></i>
-                <h3>Aumento de Ventas</h3>
-                <p>Nuestras tiendas asociadas aumentan su volumen de ventas hasta en un 100% al ofrecer planes de cuotas accesibles.</p>
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=500&q=80" alt="Riesgo">
+                <h3>Cero Riesgo</h3>
+                <p>Asumimos el 100% del riesgo de cobro. Si el cliente no paga, tu tienda no pierde nada.</p>
             </div>
         </div>
     </section>
@@ -146,12 +166,11 @@
     <section class="expansion">
         <div class="map-placeholder"></div>
         <div class="expansion-text">
-            <h2>Liderando el mercado en <span>RD y Colombia</span></h2>
-            <p>Con más de 500 puntos físicos afiliados, somos la red de financiamiento móvil más confiable del Caribe y ahora en expansión por Sudamérica.</p>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> Presencia en todas las provincias de RD.</li>
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> Operaciones activas en Bogotá y Medellín.</li>
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> Soporte técnico localizado por país.</li>
+            <h2>Líderes en <span>RD y Colombia</span></h2>
+            <ul class="expansion-list">
+                <li><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> +500 Puntos físicos en RD.</li>
+                <li><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> Nueva apertura en Colombia.</li>
+                <li><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> Soporte técnico especializado.</li>
             </ul>
         </div>
     </section>
@@ -159,21 +178,20 @@
     <section id="registro" class="form-section">
         <div class="form-box">
             <h2>Afiliar mi Tienda</h2>
-            <p>Completa los datos y recibe tus credenciales de acceso por correo.</p>
+            <p>Recibe tus claves de acceso por correo.</p>
             <form>
                 <div class="input-field"><label>País</label><select><option>República Dominicana</option><option>Colombia</option></select></div>
-                <div class="input-field"><label>Nombre del Negocio</label><input type="text" placeholder="Tech Store" required></div>
-                <div class="input-field"><label>RNC / Cédula</label><input type="text" placeholder="001-XXXXXXX-X" required></div>
-                <div class="input-field"><label>WhatsApp Contacto</label><input type="tel" placeholder="809-000-0000" required></div>
-                <div class="input-field"><label>Correo (Para recibir Usuario/Clave)</label><input type="email" placeholder="tienda@correo.com" required></div>
-                <button type="submit" class="btn-primary">ENVIAR SOLICITUD DE SOCIO</button>
+                <div class="input-field"><label>Nombre del Negocio</label><input type="text" placeholder="Tienda Ejemplo" required></div>
+                <div class="input-field"><label>WhatsApp</label><input type="tel" placeholder="809-000-0000" required></div>
+                <div class="input-field"><label>Correo</label><input type="email" placeholder="correo@tienda.com" required></div>
+                <button type="submit" class="btn-primary">SOLICITAR AFILIACIÓN</button>
             </form>
         </div>
     </section>
 </main>
 
-<footer style="padding: 40px; text-align: center; border-top: 1px solid var(--border-glass); opacity: 0.6; font-size: 0.9rem;">
-    &copy; 2026 Celularesfiao Partners International | Red de Financiamiento Móvil.
+<footer>
+    &copy; 2026 Celularesfiao Partners.
 </footer>
 
 </body>
