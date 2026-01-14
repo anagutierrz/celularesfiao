@@ -3,261 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afiliación de Tiendas | Celulares Fiao Partners</title>
+    <title>Afiliados | Celulares Fiao - Multiplica tus ventas</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --deep-blue: #031e40;
             --vibrant-green: #1c723e;
-            --light-text: #e0e0e0;
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             background-color: var(--deep-blue);
-            color: var(--light-text);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden; /* Para que la aurora no genere scroll */
-            position: relative;
+            color: var(--white);
+            scroll-behavior: smooth;
         }
 
-        /* Fondo de Aurora Boreal con animación */
-        .aurora-background {
-            position: absolute;
+        /* Aurora Background Effect */
+        .aurora-bg {
+            background: radial-gradient(circle at 0% 0%, #031e40 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, #1c723e 30%, #031e40 100%);
+            background-attachment: fixed;
+        }
+
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(3, 30, 64, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 10% 20%, #031e40 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, #1c723e 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, #031e40 0%, transparent 40%);
-            background-size: 150% 150%;
-            animation: aurora-move 20s infinite alternate ease-in-out;
-            opacity: 0.7;
-            z-index: -1;
+            z-index: 1000;
         }
 
-        @keyframes aurora-move {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
+        .logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: white; }
+        .logo span { color: var(--vibrant-green); }
 
-        /* Contenedor principal del formulario */
-        .form-wrapper {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            padding: 50px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            display: flex;
-            gap: 40px;
-            max-width: 900px;
-            width: 90%;
-            z-index: 1;
-            position: relative;
-        }
-
-        .form-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .form-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--white);
-            line-height: 1.2;
-        }
-
-        .form-header p {
-            color: var(--light-text);
-            opacity: 0.8;
-            font-size: 1.1rem;
-        }
-
-        /* Sección de Beneficios */
-        .benefits-sidebar {
-            flex: 1;
-            padding-right: 20px;
-            border-right: 1px solid var(--glass-border);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 25px;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: var(--light-text);
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-shadow: 0 0 5px rgba(0,0,0,0.2);
-        }
-
-        .benefit-item i {
+        .btn-nav {
             background: var(--vibrant-green);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
             color: white;
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 1.3rem;
-            box-shadow: 0 5px 15px rgba(28, 114, 62, 0.4);
-        }
-
-        /* Formulario */
-        .registration-form {
-            flex: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .input-group {
-            position: relative;
-        }
-
-        .input-group label {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            color: var(--light-text);
-            pointer-events: none;
-            transition: 0.3s ease;
-            font-size: 0.95rem;
-            opacity: 0.7;
-        }
-
-        .input-group input,
-        .input-group select {
-            width: 100%;
-            padding: 25px 15px 10px 15px; /* Más padding arriba para el label flotante */
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            color: var(--white);
-            font-size: 1rem;
-            box-sizing: border-box;
+            font-weight: 700;
             transition: 0.3s;
         }
 
-        .input-group input:focus,
-        .input-group select:focus {
-            border-color: var(--vibrant-green);
-            outline: none;
-            background: rgba(0, 0, 0, 0.3);
+        /* Hero */
+        .hero {
+            padding: 100px 8% 60px;
+            text-align: center;
         }
 
-        .input-group input:focus + label,
-        .input-group input:not(:placeholder-shown) + label,
-        .input-group select:focus + label,
-        .input-group select:valid + label {
-            top: 8px;
-            left: 15px;
-            font-size: 0.75rem;
-            color: var(--vibrant-green);
-            opacity: 1;
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; }
+        .hero h1 span { color: var(--vibrant-green); }
+        .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 700px; margin: 0 auto 40px; }
+
+        /* Bento Grid Beneficios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 8%;
         }
+
+        .bento-item {
+            background: var(--glass);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .bento-item:hover { border-color: var(--vibrant-green); transform: translateY(-5px); }
+        .bento-item i { font-size: 2rem; color: var(--vibrant-green); margin-bottom: 20px; }
+        .bento-item h3 { margin: 0 0 10px 0; font-size: 1.4rem; }
+
+        /* Proceso */
+        .process { padding: 80px 8%; text-align: center; background: rgba(0,0,0,0.2); }
+        .steps { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-top: 50px; }
+        .step { flex: 1; min-width: 200px; }
+        .step-num { width: 40px; height: 40px; background: var(--vibrant-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: 800; }
+
+        /* Formulario Captación */
+        .registration { padding: 100px 8%; display: flex; flex-direction: column; align-items: center; }
         
-        /* Botón "Afiliarse Ahora" */
-        .btn-affiliate {
-            grid-column: 1 / -1; /* Ocupa ambas columnas */
-            background: linear-gradient(90deg, var(--vibrant-green) 0%, #308f51 100%);
+        .form-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-card h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; opacity: 0.8; }
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
             color: white;
-            padding: 18px 30px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus { border-color: var(--vibrant-green); outline: none; }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--vibrant-green);
+            color: white;
+            padding: 18px;
             border: none;
             border-radius: 12px;
+            font-size: 1.1rem;
             font-weight: 800;
-            font-size: 1.2rem;
             cursor: pointer;
-            transition: 0.4s ease;
-            box-shadow: 0 10px 25px rgba(28, 114, 62, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            transition: 0.3s;
+            margin-top: 20px;
         }
 
-        .btn-affiliate:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(28, 114, 62, 0.6);
-            background: linear-gradient(90deg, #308f51 0%, var(--vibrant-green) 100%);
-        }
+        .btn-submit:hover { background: #258d4d; box-shadow: 0 10px 20px rgba(28, 114, 62, 0.3); }
+
+        .notice { margin-top: 20px; text-align: center; font-size: 0.85rem; opacity: 0.6; }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.7; }
 
         @media (max-width: 768px) {
-            .form-wrapper { flex-direction: column; padding: 30px; }
-            .benefits-sidebar { border-right: none; padding-right: 0; margin-bottom: 30px; border-bottom: 1px solid var(--glass-border); padding-bottom: 30px; }
-            .registration-form { grid-template-columns: 1fr; }
-            .form-header h2 { font-size: 2rem; }
+            .form-card { padding: 30px; }
         }
     </style>
 </head>
-<body>
-    <div class="aurora-background"></div>
+<body class="aurora-bg">
 
-    <div class="form-header">
-        <h2>Únete a Nuestra Red de Tiendas</h2>
-        <p>Potencia tus ventas ofreciendo financiamiento de celulares a tus clientes.</p>
-    </div>
+<header>
+    <a href="#" class="logo">Fiao<span>Partners</span></a>
+    <a href="#afiliarse" class="btn-nav">Afiliar mi Tienda</a>
+</header>
 
-    <div class="form-wrapper">
-        <div class="benefits-sidebar">
-            <div class="benefit-item">
-                <i class="fas fa-hand-holding-usd"></i>
-                <span>Cobro Inmediato</span>
+<main>
+    <section class="hero">
+        <h1>Vende más celulares<br><span>sin arriesgar tu capital.</span></h1>
+        <p>Convierte tu tienda de celulares en un punto de financiamiento autorizado. Nosotros ponemos el dinero, tú entregas el equipo y cobras al contado.</p>
+        <a href="#afiliarse" class="btn-nav" style="padding: 15px 40px; font-size: 1.1rem;">Empezar ahora</a>
+    </section>
+
+    <section class="benefits-grid">
+        <div class="bento-item">
+            <i class="fas fa-wallet"></i>
+            <h3>Cobro 24h</h3>
+            <p>Recibe el pago total de tus equipos financiados en menos de 24 horas directamente en tu cuenta bancaria.</p>
+        </div>
+        <div class="bento-item">
+            <i class="fas fa-user-shield"></i>
+            <h3>Cero Riesgo</h3>
+            <p>Si el cliente no paga, nosotros asumimos la pérdida. Tu tienda siempre recibe su dinero completo.</p>
+        </div>
+        <div class="bento-item">
+            <i class="fas fa-chart-line"></i>
+            <h3>Más Tráfico</h3>
+            <p>Aparece en nuestro directorio oficial de tiendas y recibe clientes interesados en comprar a cuotas.</p>
+        </div>
+    </section>
+
+    <section class="process">
+        <h2>¿Cómo funciona el proceso?</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>Regístrate</h4>
+                <p>Completa el formulario de afiliación con tus datos.</p>
             </div>
-            <div class="benefit-item">
-                <i class="fas fa-chart-line"></i>
-                <span>Aumenta tus Ventas</span>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Recibe Accesos</h4>
+                <p>Te enviamos por correo tu usuario y clave del panel.</p>
             </div>
-            <div class="benefit-item">
-                <i class="fas fa-money-check-alt"></i>
-                <span>Cero Riesgo de Cobro</span>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-tachometer-alt"></i>
-                <span>Aprobación Rápida</span>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>¡A vender!</h4>
+                <p>Crea solicitudes de tus clientes y aprueba en minutos.</p>
             </div>
         </div>
+    </section>
 
-        <form class="registration-form">
-            <div class="input-group">
-                <input type="text" id="storeName" placeholder=" " required>
-                <label for="storeName">Nombre de la Tienda</label>
-            </div>
-            <div class="input-group">
-                <input type="text" id="rnc" placeholder=" " required>
-                <label for="rnc">RNC o Cédula</label>
-            </div>
-            <div class="input-group">
-                <input type="tel" id="whatsapp" placeholder=" " required>
-                <label for="whatsapp">WhatsApp</label>
-            </div>
-            <div class="input-group">
-                <input type="email" id="email" placeholder=" " required>
-                <label for="email">Correo Electrónico</label>
-            </div>
-            <div class="input-group">
-                <input type="text" id="province" placeholder=" " required>
-                <label for="province">Provincia</label>
-            </div>
-            <div class="input-group">
-                <input type="password" id="password" placeholder=" " required>
-                <label for="password">Contraseña</label>
-            </div>
-            
-            <button type="submit" class="btn-affiliate">¡AFILIARSE AHORA!</button>
-        </form>
-    </div>
+    <section id="afiliarse" class="registration">
+        <div class="form-card">
+            <h2>Solicitud de Afiliación</h2>
+            <form action="#">
+                <div class="form-group">
+                    <label>Nombre del Negocio</label>
+                    <input type="text" placeholder="Ej. Tech Store RD" required>
+                </div>
+                <div class="form-group">
+                    <label>RNC o Cédula</label>
+                    <input type="text" placeholder="001-XXXXXXX-X" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono de Contacto (WhatsApp)</label>
+                    <input type="tel" placeholder="809 000 0000" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico (Para recibir tus credenciales)</label>
+                    <input type="email" placeholder="contacto@tutienda.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Ubicación / Ciudad</label>
+                    <input type="text" placeholder="Ej. Santiago, Centro" required>
+                </div>
+
+                <button type="submit" class="btn-submit">ENVIAR Y AFILIARME</button>
+                
+                <p class="notice">
+                    <i class="fas fa-info-circle"></i> Al hacer clic, validaremos tus datos. Recibirás un correo con tus credenciales de acceso una vez aprobado el registro.
+                </p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Celulares Fiao S.R.L. | Red de Partners República Dominicana</p>
+</footer>
 
 </body>
 </html>
-```http://googleusercontent.com/image_generation_content/2
