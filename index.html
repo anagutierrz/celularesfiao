@@ -1,212 +1,243 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afiliados | Celulares Fiao - Haz crecer tu tienda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Celulares Fiao | Estrena hoy mismo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --brand-yellow: #FFD700;
-            --dark-blue: #0a0e14;
-            --card-grey: #161b22;
-            --text-light: #f0f6fc;
-            --success: #2ea043;
+            --deep-blue: #031e40;
+            --vibrant-green: #1c723e;
+            --soft-green: #e8f5e9;
+            --white: #ffffff;
+            --text-gray: #64748b;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark-blue);
-            color: var(--text-light);
+            font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background-color: #f8fafc;
+            color: var(--deep-blue);
         }
 
+        /* Navbar */
         header {
-            padding: 20px 5%;
-            border-bottom: 1px solid #30363d;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: var(--white);
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .logo { font-weight: 800; font-size: 1.4rem; text-decoration: none; color: white; }
-        .logo span { color: var(--brand-yellow); }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--deep-blue); text-decoration: none; }
+        .logo span { color: var(--vibrant-green); }
 
-        .container {
+        /* Hero Section */
+        .hero {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-            padding: 60px 8%;
-            max-width: 1400px;
-            margin: auto;
+            grid-template-columns: 1.2fr 1fr;
+            padding: 80px 8%;
+            align-items: center;
+            gap: 40px;
+            background: linear-gradient(135deg, var(--white) 0%, #f1f5f9 100%);
         }
 
-        /* Lado Izquierdo: Beneficios */
-        .info-panel h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 25px;
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--deep-blue);
         }
-        .info-panel h1 span { color: var(--brand-yellow); }
 
-        .benefit-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
+        .hero-content h1 span { color: var(--vibrant-green); }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
             margin-bottom: 30px;
         }
-        .benefit-card i {
-            background: rgba(255, 215, 0, 0.1);
-            color: var(--brand-yellow);
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 1.2rem;
-        }
-        .benefit-card h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
-        .benefit-card p { margin: 0; color: #8b949e; font-size: 0.9rem; }
 
-        /* Lado Derecho: Formulario */
-        .form-container {
-            background: var(--card-grey);
+        /* Formulario de Captación */
+        .lead-form {
+            background: var(--white);
             padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #30363d;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(3, 30, 64, 0.1);
+            border: 1px solid #e2e8f0;
         }
 
-        .form-header { margin-bottom: 30px; text-align: center; }
-        .form-header h2 { margin: 0; color: var(--brand-yellow); }
+        .lead-form h3 { margin-top: 0; font-size: 1.5rem; text-align: center; }
 
-        .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: #8b949e; }
-        .input-group input, .input-group select {
+        .input-row { margin-bottom: 15px; }
+        .input-row label { display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: 600; }
+        .input-row input, .input-row select {
             width: 100%;
             padding: 12px;
-            background: #0d1117;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            color: white;
+            border: 2px solid #f1f5f9;
+            border-radius: 12px;
             box-sizing: border-box;
             transition: 0.3s;
         }
-        .input-group input:focus { border-color: var(--brand-yellow); outline: none; }
 
-        .btn-register {
+        .input-row input:focus { border-color: var(--vibrant-green); outline: none; }
+
+        .btn-submit {
             width: 100%;
-            padding: 15px;
-            background: var(--brand-yellow);
+            background: var(--vibrant-green);
+            color: white;
+            padding: 16px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
             transition: 0.3s;
-            color: #000;
+            margin-top: 10px;
         }
-        .btn-register:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .btn-submit:hover { background: var(--deep-blue); transform: translateY(-2px); }
+
+        /* Beneficios Section */
+        .benefits-section { padding: 80px 8%; text-align: center; }
+        .benefits-section h2 { font-size: 2.5rem; margin-bottom: 50px; }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid #f1f5f9;
+            text-align: left;
+        }
+
+        .benefit-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--soft-green);
+            color: var(--vibrant-green);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h4 { margin: 0 0 10px 0; font-size: 1.2rem; }
+        .benefit-card p { margin: 0; color: var(--text-gray); font-size: 0.95rem; }
 
         @media (max-width: 968px) {
-            .container { grid-template-columns: 1fr; }
-            .info-panel { text-align: center; }
-            .benefit-card { text-align: left; }
+            .hero { grid-template-columns: 1fr; padding-top: 40px; }
+            .hero-content { text-align: center; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="/" class="logo">CELULARES<span>FIAO</span> PARTNERS</a>
-    <a href="#" style="color: var(--brand-yellow); text-decoration: none; font-size: 0.9rem; font-weight: 600;">Ya soy socio →</a>
+    <a href="#" class="logo">Celulares<span>Fiao</span></a>
+    <div class="nav-links">
+        <a href="https://wa.me/18297864150" style="text-decoration: none; color: var(--vibrant-green); font-weight: 700;"><i class="fab fa-whatsapp"></i> Chat Directo</a>
+    </div>
 </header>
 
-<div class="container">
-    <section class="info-panel">
-        <h1>Conviértete en <span>Tienda Autorizada</span></h1>
-        <p style="color: #8b949e; margin-bottom: 40px;">Únete a la red de financiamiento más grande de RD. Nosotros ponemos el capital, tú pones los equipos.</p>
-
-        <div class="benefit-card">
-            <i class="fas fa-hand-holding-usd"></i>
-            <div>
-                <h3>Cobro Inmediato</h3>
-                <p>Recibe el pago total del equipo en menos de 24 horas laborables tras la aprobación.</p>
-            </div>
-        </div>
-
-        <div class="benefit-card">
-            <i class="fas fa-chart-line"></i>
-            <div>
-                <h3>Aumenta tus Ventas</h3>
-                <p>Siete de cada diez dominicanos prefieren comprar a cuotas. No dejes que se vayan.</p>
-            </div>
-        </div>
-
-        <div class="benefit-card">
-            <i class="fas fa-user-shield"></i>
-            <div>
-                <h3>Cero Riesgo de Cobro</h3>
-                <p>Celulares Fiao asume el riesgo crediticio. Tú solo te encargas de vender.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="form-container">
-        <div class="form-header">
-            <h2>Crear Cuenta de Socio</h2>
-            <p style="font-size: 0.8rem; color: #8b949e;">Completa los datos de tu establecimiento</p>
-        </div>
-
-        <form>
-            <div class="input-group">
-                <label>Nombre de la Tienda</label>
-                <input type="text" placeholder="Ej. Juan Celulares" required>
-            </div>
-
-            <div class="input-group">
-                <label>RNC o Cédula del Propietario</label>
-                <input type="text" placeholder="001-0000000-0" required>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <div class="input-group">
-                    <label>Provincia</label>
-                    <select>
-                        <option>Santo Domingo</option>
-                        <option>Santiago</option>
-                        <option>La Romana</option>
-                        <option>Otros</option>
-                    </select>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>El celular que quieres, <span>fiao y sin vueltas.</span></h1>
+            <p>Aprobación en minutos para República Dominicana. Recibimos tu equipo usado como parte del inicial.</p>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <div style="background: var(--soft-green); padding: 10px 20px; border-radius: 50px; color: var(--vibrant-green); font-weight: 600; font-size: 0.9rem;">
+                    ✓ Sin historial de crédito
                 </div>
-                <div class="input-group">
-                    <label>Teléfono WhatsApp</label>
+                <div style="background: var(--soft-green); padding: 10px 20px; border-radius: 50px; color: var(--vibrant-green); font-weight: 600; font-size: 0.9rem;">
+                    ✓ Entrega inmediata
+                </div>
+            </div>
+        </div>
+
+        <div class="lead-form">
+            <h3>Pre-aprobación Express</h3>
+            <form>
+                <div class="input-row">
+                    <label>Nombre Completo</label>
+                    <input type="text" placeholder="Ej: Juan Pérez" required>
+                </div>
+                <div class="input-row">
+                    <label>WhatsApp</label>
                     <input type="tel" placeholder="809-000-0000" required>
                 </div>
-            </div>
-
-            <div class="input-group">
-                <label>Correo Electrónico Corporativo</label>
-                <input type="email" placeholder="tienda@ejemplo.com" required>
-            </div>
-
-            <div class="input-group">
-                <label>Contraseña de Acceso</label>
-                <input type="password" placeholder="••••••••" required>
-            </div>
-
-            <button type="submit" class="btn-register">SOLICITAR AFILIACIÓN</button>
-            
-            <p style="font-size: 0.7rem; color: #586069; text-align: center; margin-top: 20px;">
-                Al registrarte, aceptas nuestros términos de socio comercial y políticas de privacidad de datos.
-            </p>
-        </form>
+                <div class="input-row">
+                    <label>Equipo que buscas</label>
+                    <select>
+                        <option>iPhone (Varios modelos)</option>
+                        <option>Samsung Galaxy</option>
+                        <option>Xiaomi / Poco</option>
+                        <option>Infinix / Tecno</option>
+                    </select>
+                </div>
+                <div class="input-row">
+                    <label>¿Tienes equipo para dar como inicial?</label>
+                    <select>
+                        <option>No, pagaré inicial en efectivo</option>
+                        <option>Sí, quiero entregar mi móvil actual</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">SOLICITAR AHORA</button>
+            </form>
+        </div>
     </section>
-</div>
 
-<footer style="margin-top: auto; padding: 30px; text-align: center; border-top: 1px solid #30363d; font-size: 0.8rem; color: #8b949e;">
-    &copy; 2026 Celulares Fiao Network. Plataforma exclusiva para comercios.
+    <section class="benefits-section">
+        <h2>¿Por qué elegir Celulares Fiao?</h2>
+        <div class="benefits-grid">
+            <article class="benefit-card">
+                <div class="icon-circle"><i class="fas fa-bolt"></i></div>
+                <h4>Rapidez Dominicana</h4>
+                <p>Nada de esperas largas. Te damos respuesta sobre tu financiamiento en menos de 15 minutos.</p>
+            </article>
+
+            <article class="benefit-card">
+                <div class="icon-circle"><i class="fas fa-sync-alt"></i></div>
+                <h4>Trade-In Flexible</h4>
+                <p>Valoramos tu celular actual al mejor precio del mercado para que tu inicial sea de RD$0.</p>
+            </article>
+
+            <article class="benefit-card">
+                <div class="icon-circle"><i class="fas fa-shield-heart"></i></div>
+                <h4>Garantía de Casa</h4>
+                <p>Todos nuestros equipos cuentan con garantía técnica y soporte directo en nuestra tienda física.</p>
+            </article>
+
+            <article class="benefit-card">
+                <div class="icon-circle"><i class="fas fa-calendar-check"></i></div>
+                <h4>Cuotas a tu Medida</h4>
+                <p>Elige planes desde 6 hasta 10 meses. Tú decides cuánto puedes pagar mensualmente.</p>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer style="background: var(--deep-blue); color: white; padding: 60px 8%; text-align: center;">
+    <p style="font-size: 1.2rem; margin-bottom: 10px;">Celulares Fiao S.R.L</p>
+    <p style="opacity: 0.7;">Plaza Central, 2do Nivel, Santo Domingo, RD.</p>
+    <div style="margin-top: 30px; font-size: 1.5rem; display: flex; justify-content: center; gap: 20px;">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-tiktok"></i>
+    </div>
 </footer>
 
 </body>
