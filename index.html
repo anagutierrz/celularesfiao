@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celularesfiao Partners | Únete a la Red Líder de Financiamiento en RD y Colombia</title>
-    <meta name="description" content="Aumenta las ventas de tu tienda de celulares financiando equipos con Celularesfiao Partners. Cobro en 24h, sin riesgo de impago y aprobación inmediata.">
+    <title>Celularesfiao Partners | La Red de Financiamiento #1 de RD y Colombia</title>
+    <meta name="description" content="Haz crecer tu tienda de celulares financiando equipos con Celularesfiao Partners. Cobro en 24h y aprobación inmediata.">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -20,10 +20,9 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0; background: var(--bg-dark); color: #fff;
-            line-height: 1.6; overflow-x: hidden;
+            line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth;
         }
 
-        /* Background Aurora */
         .aurora {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: radial-gradient(circle at 0% 0%, #031e40 0%, transparent 40%),
@@ -31,7 +30,6 @@
             opacity: 0.6;
         }
 
-        /* Header */
         header {
             padding: 15px 8%; display: flex; justify-content: space-between; align-items: center;
             background: rgba(1, 6, 13, 0.9); backdrop-filter: blur(15px);
@@ -41,64 +39,46 @@
         .logo span { color: var(--accent-green); }
 
         .nav-btns { display: flex; gap: 15px; }
-        .btn-outline { 
-            border: 1px solid var(--accent-green); color: var(--accent-green); 
-            padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem;
-            transition: 0.3s;
-        }
-        .btn-fill { 
-            background: var(--accent-green); color: #fff; 
-            padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
-        }
+        .btn-acc { border: 1px solid var(--accent-green); color: var(--accent-green); padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .btn-acc:hover { background: var(--accent-green); color: #fff; }
+        .btn-afi { background: var(--accent-green); color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); }
 
         /* Hero */
-        .hero { padding: 100px 8% 60px; text-align: center; max-width: 1000px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; }
-        .hero h1 span { color: var(--accent-green); }
-        .hero p { font-size: 1.25rem; color: var(--text-gray); margin-bottom: 40px; }
+        .hero { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 25px; }
+        .hero-text h1 span { color: var(--accent-green); }
+        .hero-text p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 35px; }
+        .hero-img img { width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid var(--border-glass); }
+
+        /* Stats & Trusted By */
+        .trusted { padding: 40px 8%; background: rgba(255,255,255,0.02); text-align: center; }
+        .trusted-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; align-items: center; opacity: 0.5; filter: grayscale(1); }
+        .trusted-grid i { font-size: 2.5rem; }
 
         /* Robust Info Section */
-        .info-grid { padding: 80px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .info-card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 24px; border: 1px solid var(--border-glass); transition: 0.3s; }
-        .info-card:hover { transform: translateY(-10px); border-color: var(--accent-green); }
-        .info-card i { font-size: 2.5rem; color: var(--accent-green); margin-bottom: 20px; }
-        .info-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
-        .info-card p { color: var(--text-gray); font-size: 1rem; }
+        .info-section { padding: 100px 8%; }
+        .info-header { text-align: center; margin-bottom: 60px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .info-card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 24px; border: 1px solid var(--border-glass); }
+        .info-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; }
+        .info-card i { font-size: 2rem; color: var(--accent-green); margin-bottom: 15px; }
 
-        /* SEO Content Block */
-        .seo-content { padding: 80px 8%; background: rgba(255,255,255,0.02); }
-        .seo-content-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .seo-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent-green); }
-        .seo-text p { margin-bottom: 20px; font-size: 1.1rem; opacity: 0.9; }
-
-        /* Process Section */
-        .process-steps { padding: 80px 8%; text-align: center; }
-        .steps-container { display: flex; justify-content: space-between; gap: 20px; margin-top: 50px; flex-wrap: wrap; }
-        .step { flex: 1; min-width: 250px; position: relative; }
-        .step-icon { width: 60px; height: 60px; background: var(--vibrant-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 800; font-size: 1.5rem; }
+        /* Mapa y Expansión */
+        .expansion { padding: 100px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; background: rgba(0,0,0,0.3); }
+        .map-placeholder { background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80'); height: 400px; border-radius: 30px; background-size: cover; background-position: center; border: 1px solid var(--border-glass); }
 
         /* Form Section */
         .form-section { padding: 100px 8%; display: flex; justify-content: center; }
-        .form-box { background: #010811; border: 1px solid var(--border-glass); padding: 50px; border-radius: 30px; width: 100%; max-width: 600px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-        .form-box h2 { text-align: center; margin-bottom: 10px; font-size: 2rem; }
-        .form-box p { text-align: center; color: var(--text-gray); margin-bottom: 30px; }
+        .form-box { background: #010811; border: 1px solid var(--border-glass); padding: 50px; border-radius: 30px; width: 100%; max-width: 600px; }
 
         .input-field { margin-bottom: 20px; }
-        .input-field label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--accent-green); font-weight: 600; }
+        .input-field label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--accent-green); }
         .input-field input, .input-field select { width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 12px; color: #fff; box-sizing: border-box; }
-        
-        .btn-primary { width: 100%; background: var(--accent-green); color: #fff; padding: 20px; border: none; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
-        .btn-primary:hover { background: #18a957; transform: translateY(-3px); }
+        .btn-primary { width: 100%; background: var(--accent-green); color: #fff; padding: 20px; border: none; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; }
 
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            header { padding: 15px 5%; }
-            .nav-btns { gap: 8px; }
-            .btn-outline, .btn-fill { padding: 8px 12px; font-size: 0.8rem; }
-            .seo-content-inner { grid-template-columns: 1fr; }
-            .form-box { padding: 30px 20px; }
-            .hero h1 { font-size: 2.5rem; }
+        @media (max-width: 968px) {
+            .hero, .expansion { grid-template-columns: 1fr; text-align: center; }
+            .hero-img { order: -1; }
         }
     </style>
 </head>
@@ -107,127 +87,93 @@
 <div class="aurora"></div>
 
 <header>
-    <a href="/" class="logo">Celularesfiao<span>Partners</span></a>
+    <a href="index.html" class="logo">Celularesfiao<span>Partners</span></a>
     <div class="nav-btns">
-        <a href="#acceder" class="btn-outline">ACCEDER</a>
-        <a href="#registro" class="btn-fill">AFILIARME</a>
+        <a href="Acceder.html" class="btn-acc">ACCEDER</a>
+        <a href="#registro" class="btn-afi">AFILIARME</a>
     </div>
 </header>
 
 <main>
     <section class="hero">
-        <h1>Multiplica tus ventas de celulares con <span>financiamiento sin riesgo.</span></h1>
-        <p>Convierte tu tienda en un centro de financiamiento. Tú entregas el equipo, nosotros pagamos la factura al contado y el cliente nos paga a nosotros.</p>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <div style="background: rgba(46, 204, 113, 0.1); padding: 10px 20px; border-radius: 50px; border: 1px solid var(--accent-green); color: var(--accent-green); font-weight: 700;">+500 Tiendas en RD</div>
-            <div style="background: rgba(46, 204, 113, 0.1); padding: 10px 20px; border-radius: 50px; border: 1px solid var(--accent-green); color: var(--accent-green); font-weight: 700;">Expansión Colombia</div>
+        <div class="hero-text">
+            <h1>Convierte tu tienda en una <span>máquina de ventas.</span></h1>
+            <p>Únete a la red de +500 tiendas que ya financian con nosotros en RD y Colombia. Tú entregas el equipo, nosotros te pagamos en 24h.</p>
+            <a href="#registro" class="btn-afi" style="padding: 18px 40px; font-size: 1.1rem;">EMPEZAR A VENDER HOY</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Tienda de celulares moderna">
         </div>
     </section>
 
-    <section class="info-grid">
-        <div class="info-card">
-            <i class="fas fa-hand-holding-usd"></i>
-            <h3>Liquidación en 24h</h3>
-            <p>Sabemos que el flujo de caja es el corazón de tu tienda. Por eso, pagamos el valor total de tus ventas financiadas en menos de un día laborable.</p>
-        </div>
-        <div class="info-card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Cero Riesgo de Impago</h3>
-            <p>Celularesfiao asume el 100% del riesgo crediticio. Si el cliente se atrasa, tu ganancia no se ve afectada. Tú ya cobraste al contado.</p>
-        </div>
-        <div class="info-card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Vende un 100% Más</h3>
-            <p>Al ofrecer iniciales desde RD$100 o aceptar equipos usados, atraes al 70% del mercado que no tiene el dinero completo para un equipo nuevo.</p>
+    <section class="trusted">
+        <p style="margin-bottom: 30px; opacity: 0.6; font-weight: 700; letter-spacing: 2px;">NUESTROS ALIADOS TECNOLÓGICOS</p>
+        <div class="trusted-grid">
+            <i class="fab fa-apple"></i>
+            <i class="fab fa-google-pay"></i>
+            <i class="fab fa-samsung"></i>
+            <i class="fab fa-android"></i>
+            <i class="fab fa-aws"></i>
         </div>
     </section>
 
-    <section class="seo-content">
-        <div class="seo-content-inner">
-            <div class="seo-text">
-                <h2>¿Por qué somos la plataforma #1 para Tiendas de Celulares?</h2>
-                <p>En el competitivo mercado de **tecnología en República Dominicana y Colombia**, ofrecer facilidades de pago no es un lujo, es una necesidad. **Celularesfiao Partners** proporciona la infraestructura tecnológica para que cualquier establecimiento, desde pequeños locales hasta grandes cadenas, pueda ofrecer **celulares fiao** de forma profesional.</p>
-                <p>Nuestra plataforma de pre-aprobación utiliza inteligencia de datos para darte respuesta en 15 minutos, permitiendo que el cliente salga de tu tienda con su equipo configurado y feliz.</p>
+    <section class="info-section">
+        <div class="info-header">
+            <h2>¿Por qué elegir Celularesfiao Partners?</h2>
+        </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Pagos rápidos">
+                <i class="fas fa-bolt"></i>
+                <h3>Liquidación Express</h3>
+                <p>No esperes semanas. Recibe el pago total de tus ventas financiadas directamente en tu cuenta en menos de 24 horas laborables.</p>
             </div>
-            <div class="seo-img">
-                <div style="background: linear-gradient(var(--vibrant-green), var(--deep-blue)); height: 300px; border-radius: 30px; display: flex; align-items: center; justify-content: center; font-size: 5rem; opacity: 0.5;">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
+            <div class="info-card">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=500&q=80" alt="Seguridad">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Cero Riesgo Crediticio</h3>
+                <p>Nosotros asumimos el riesgo de cobro. Si el cliente se atrasa, es nuestro problema. Tu tienda siempre mantiene su ganancia intacta.</p>
+            </div>
+            <div class="info-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Crecimiento">
+                <i class="fas fa-chart-line"></i>
+                <h3>Aumento de Ventas</h3>
+                <p>Nuestras tiendas asociadas aumentan su volumen de ventas hasta en un 100% al ofrecer planes de cuotas accesibles.</p>
             </div>
         </div>
     </section>
 
-    <section class="process-steps">
-        <h2>Tu camino al éxito como Partner</h2>
-        <div class="steps-container">
-            <div class="step">
-                <div class="step-icon">1</div>
-                <h4>Registro Online</h4>
-                <p>Completa tus datos comerciales y de contacto en el formulario de abajo.</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">2</div>
-                <h4>Validación Express</h4>
-                <p>Nuestro equipo de riesgos valida tu local y te asigna un oficial de cuenta.</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">3</div>
-                <h4>Recibe Accesos</h4>
-                <p>Te enviamos por correo tus credenciales para acceder al Dashboard de Partners.</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">4</div>
-                <h4>¡A Financiar!</h4>
-                <p>Crea tu primera solicitud y mira cómo tus ventas se duplican en tiempo real.</p>
-            </div>
+    <section class="expansion">
+        <div class="map-placeholder"></div>
+        <div class="expansion-text">
+            <h2>Liderando el mercado en <span>RD y Colombia</span></h2>
+            <p>Con más de 500 puntos físicos afiliados, somos la red de financiamiento móvil más confiable del Caribe y ahora en expansión por Sudamérica.</p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> Presencia en todas las provincias de RD.</li>
+                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> Operaciones activas en Bogotá y Medellín.</li>
+                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color:var(--accent-green)"></i> Soporte técnico localizado por país.</li>
+            </ul>
         </div>
     </section>
 
     <section id="registro" class="form-section">
         <div class="form-box">
-            <h2>Afiliación de Nuevas Tiendas</h2>
-            <p>Completa el formulario y recibe tus claves en el correo electrónico proporcionado.</p>
+            <h2>Afiliar mi Tienda</h2>
+            <p>Completa los datos y recibe tus credenciales de acceso por correo.</p>
             <form>
-                <div class="input-field">
-                    <label>País</label>
-                    <select required>
-                        <option>República Dominicana</option>
-                        <option>Colombia</option>
-                    </select>
-                </div>
-                <div class="input-field">
-                    <label>Nombre de la Tienda / Negocio</label>
-                    <input type="text" placeholder="Ej: Santo Domingo Tech" required>
-                </div>
-                <div class="input-field">
-                    <label>WhatsApp del Dueño/Gerente</label>
-                    <input type="tel" placeholder="809-000-0000" required>
-                </div>
-                <div class="input-field">
-                    <label>Correo Electrónico Corporativo</label>
-                    <input type="email" placeholder="tienda@ejemplo.com" required>
-                </div>
-                <div class="input-field">
-                    <label>Provincia / Estado</label>
-                    <input type="text" placeholder="Ej: Distrito Nacional" required>
-                </div>
-                <button type="submit" class="btn-primary">ENVIAR SOLICITUD DE AFILIACIÓN</button>
+                <div class="input-field"><label>País</label><select><option>República Dominicana</option><option>Colombia</option></select></div>
+                <div class="input-field"><label>Nombre del Negocio</label><input type="text" placeholder="Tech Store" required></div>
+                <div class="input-field"><label>RNC / Cédula</label><input type="text" placeholder="001-XXXXXXX-X" required></div>
+                <div class="input-field"><label>WhatsApp Contacto</label><input type="tel" placeholder="809-000-0000" required></div>
+                <div class="input-field"><label>Correo (Para recibir Usuario/Clave)</label><input type="email" placeholder="tienda@correo.com" required></div>
+                <button type="submit" class="btn-primary">ENVIAR SOLICITUD DE SOCIO</button>
             </form>
-            <div style="margin-top: 20px; text-align: center; font-size: 0.8rem; color: var(--text-gray);">
-                <i class="fas fa-lock"></i> Tus datos están protegidos por encriptación bancaria.
-            </div>
         </div>
     </section>
 </main>
 
-<footer style="padding: 50px 8%; background: #000; text-align: center; border-top: 1px solid var(--border-glass);">
-    <p style="font-weight: 800; margin-bottom: 10px;">Celularesfiao Partners International</p>
-    <p style="color: var(--text-gray); font-size: 0.9rem;">Plaza Central, 2do Nivel, Santo Domingo, RD | Carrera 7, Bogotá, Colombia</p>
-    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px; font-size: 1.5rem;">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-linkedin"></i>
-    </div>
+<footer style="padding: 40px; text-align: center; border-top: 1px solid var(--border-glass); opacity: 0.6; font-size: 0.9rem;">
+    &copy; 2026 Celularesfiao Partners International | Red de Financiamiento Móvil.
 </footer>
 
 </body>
