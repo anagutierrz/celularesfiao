@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Socios | Celularesfiao Partners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --deep-blue: #031e40;
+            --vibrant-green: #1c723e;
+            --accent-green: #2ecc71;
+            --bg-dark: #01060d;
+            --sidebar-bg: #020c18;
+            --card-glass: rgba(255, 255, 255, 0.05);
+            --border-glass: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0; background: var(--bg-dark); color: #fff;
+            display: flex; min-height: 100vh; overflow-x: hidden;
+        }
+
+        /* --- SIDEBAR NAV --- */
+        .sidebar {
+            width: 260px; background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-glass);
+            display: flex; flex-direction: column;
+            position: fixed; height: 100vh; z-index: 100;
+            transition: 0.3s;
+        }
+
+        .sidebar-header { padding: 30px 20px; text-align: center; }
+        .logo { font-weight: 800; font-size: 1.2rem; text-decoration: none; color: #fff; }
+        .logo span { color: var(--accent-green); }
+
+        .nav-menu { flex: 1; padding: 20px; }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 15px; text-decoration: none; color: #94a3b8;
+            border-radius: 12px; transition: 0.3s; margin-bottom: 5px;
+        }
+        .nav-item:hover, .nav-item.active { background: var(--vibrant-green); color: white; }
+
+        /* --- MAIN CONTENT --- */
+        .main-content { margin-left: 260px; flex: 1; padding: 40px; }
+
+        .header-top {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 40px;
+        }
+        .welcome-text h1 { margin: 0; font-size: 1.8rem; }
+        .welcome-text p { color: #94a3b8; margin: 5px 0 0; }
+
+        /* --- DASHBOARD CARDS --- */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px; margin-bottom: 40px;
+        }
+        .stat-card {
+            background: var(--card-glass); padding: 25px; border-radius: 20px;
+            border: 1px solid var(--border-glass); position: relative;
+            overflow: hidden;
+        }
+        .stat-card::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.05) 0%, transparent 70%);
+        }
+        .stat-card h3 { font-size: 0.9rem; color: #94a3b8; margin-top: 0; text-transform: uppercase; }
+        .stat-card .value { font-size: 2rem; font-weight: 800; margin: 10px 0; }
+        .stat-card .trend { font-size: 0.8rem; color: var(--accent-green); font-weight: 700; }
+
+        /* --- VIDEO TUTORIALS SECTION --- */
+        .section-title { margin: 40px 0 20px; font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
+        .section-title i { color: var(--accent-green); }
+
+        .video-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .video-card {
+            background: var(--card-glass); border-radius: 20px; overflow: hidden;
+            border: 1px solid var(--border-glass); transition: 0.3s;
+        }
+        .video-card:hover { transform: translateY(-5px); border-color: var(--accent-green); }
+        
+        .video-thumb {
+            height: 180px; background: #000; position: relative;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+        .play-btn {
+            position: absolute; width: 50px; height: 50px; background: var(--accent-green);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; color: #fff; cursor: pointer;
+        }
+
+        .video-info { padding: 20px; }
+        .video-info h4 { margin: 0 0 10px 0; font-size: 1.1rem; }
+        .video-info p { margin: 0; font-size: 0.85rem; color: #94a3b8; }
+
+        /* --- MOBILE ADJUSTMENTS --- */
+        @media (max-width: 968px) {
+            .sidebar { width: 70px; }
+            .sidebar .logo, .sidebar span { display: none; }
+            .sidebar-header { padding: 20px 0; }
+            .nav-item { justify-content: center; padding: 15px 0; }
+            .nav-item i { font-size: 1.3rem; }
+            .main-content { margin-left: 70px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="logo">Fiao<span>Partners</span></a>
+        </div>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active"><i class="fas fa-chart-pie"></i> <span>Dashboard</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-file-invoice-dollar"></i> <span>Nueva Solicitud</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-history"></i> <span>Historial</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-play-circle"></i> <span>Academia</span></a>
+            <a href="#" class="nav-item"><i class="fas fa-user-cog"></i> <span>Configuración</span></a>
+        </nav>
+        <div style="padding: 20px;">
+            <a href="#" class="nav-item" style="color: #ef4444;"><i class="fas fa-sign-out-alt"></i> <span>Cerrar Sesión</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header-top">
+            <div class="welcome-text">
+                <h1>Hola, TechStore Dominicana 👋</h1>
+                <p>Aquí tienes el resumen de tu rendimiento hoy.</p>
+            </div>
+            <div class="user-profile" style="display: flex; align-items: center; gap: 15px;">
+                <div style="text-align: right; display: none; display: block;">
+                    <div style="font-weight: 700;">RD$ 124,500.00</div>
+                    <div style="font-size: 0.7rem; color: var(--accent-green);">Por liquidar mañana</div>
+                </div>
+                <div style="width: 45px; height: 45px; background: var(--vibrant-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">TS</div>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Ventas del Mes</h3>
+                <div class="value">RD$ 845,200</div>
+                <div class="trend"><i class="fas fa-arrow-up"></i> +12% vs mes pasado</div>
+            </div>
+            <div class="stat-card">
+                <h3>Solicitudes Aprobadas</h3>
+                <div class="value">42</div>
+                <div class="trend" style="color: #94a3b8;">8 en proceso hoy</div>
+            </div>
+            <div class="stat-card">
+                <h3>Tasa de Aprobación</h3>
+                <div class="value">94.2%</div>
+                <div class="trend"><i class="fas fa-check"></i> Nivel: Socio Premium</div>
+            </div>
+        </section>
+
+        <div class="section-title">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>Academia de Partners: Aprende y Vende</h2>
+        </div>
+
+        <section class="video-grid">
+            <article class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=600&q=80" alt="Video tutorial">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="video-info">
+                    <h4>Cómo crear tu primera solicitud</h4>
+                    <p>Aprende a subir los documentos del cliente y obtener aprobación en 5 minutos.</p>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Video tutorial">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="video-info">
+                    <h4>Entendiendo tus liquidaciones</h4>
+                    <p>Guía paso a paso sobre cómo y cuándo recibes los pagos en tu cuenta bancaria.</p>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80" alt="Video tutorial">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="video-info">
+                    <h4>Tips para cerrar ventas fiao</h4>
+                    <p>Técnicas de ventas para convencer al cliente de elegir el plan de cuotas.</p>
+                </div>
+            </article>
+        </section>
+
+        <div style="margin-top: 50px; background: linear-gradient(90deg, var(--deep-blue), var(--vibrant-green)); padding: 30px; border-radius: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <h2 style="margin: 0;">¿Necesitas ayuda inmediata?</h2>
+                <p style="margin: 5px 0 0; opacity: 0.8;">Tu oficial de cuenta está disponible para asistirte ahora mismo.</p>
+            </div>
+            <a href="https://wa.me/18297864150" style="background: #fff; color: var(--deep-blue); padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: 800; display: flex; align-items: center; gap: 10px;">
+                <i class="fab fa-whatsapp"></i> HABLAR CON SOPORTE
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
