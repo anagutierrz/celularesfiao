@@ -3,238 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afiliados | Celulares Fiao - Multiplica tus ventas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Socio Comercial | Celulares Fiao</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --deep-blue: #031e40;
             --vibrant-green: #1c723e;
+            --bg-dark: #020d1c;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.05);
+            --text-dim: #cbd5e1;
+            --card-bg: rgba(255, 255, 255, 0.03);
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
-            background-color: var(--deep-blue);
+            background-color: var(--bg-dark);
             color: var(--white);
-            scroll-behavior: smooth;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Aurora Background Effect */
-        .aurora-bg {
-            background: radial-gradient(circle at 0% 0%, #031e40 0%, transparent 50%),
-                        radial-gradient(circle at 100% 100%, #1c723e 30%, #031e40 100%);
-            background-attachment: fixed;
+        /* Aurora sutil: Solo en las esquinas para no molestar el texto */
+        .aurora {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 100% 0%, rgba(28, 114, 62, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 0% 100%, rgba(3, 30, 64, 0.4) 0%, transparent 40%);
+            z-index: -1;
         }
 
         header {
-            padding: 20px 8%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(3, 30, 64, 0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(2, 13, 28, 0.9);
             backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 100;
         }
 
-        .logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: white; }
+        .logo { font-weight: 800; font-size: 1.2rem; text-decoration: none; color: white; }
         .logo span { color: var(--vibrant-green); }
 
-        .btn-nav {
-            background: var(--vibrant-green);
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: white;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        /* Hero */
+        /* HERO - Enfocado en Mobile */
         .hero {
-            padding: 100px 8% 60px;
+            padding: 60px 5% 40px;
             text-align: center;
         }
 
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; }
-        .hero h1 span { color: var(--vibrant-green); }
-        .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 700px; margin: 0 auto 40px; }
-
-        /* Bento Grid Beneficios */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px 8%;
+        .hero h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 800;
         }
 
-        .bento-item {
-            background: var(--glass);
-            padding: 30px;
+        .hero h1 span { color: var(--vibrant-green); }
+
+        .hero p {
+            font-size: 1rem;
+            color: var(--text-dim);
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        /* BENEFICIOS - Estilo lista limpia para móvil */
+        .benefits-section { padding: 40px 5%; }
+
+        .benefit-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .benefit-item i {
+            color: var(--vibrant-green);
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        .benefit-item h3 { font-size: 1.1rem; margin: 0 0 5px 0; color: white; }
+        .benefit-item p { font-size: 0.9rem; margin: 0; color: var(--text-dim); }
+
+        /* FORMULARIO - Glassmorphism limpio */
+        .form-section { padding: 40px 5% 80px; }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
             border-radius: 24px;
             border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .bento-item:hover { border-color: var(--vibrant-green); transform: translateY(-5px); }
-        .bento-item i { font-size: 2rem; color: var(--vibrant-green); margin-bottom: 20px; }
-        .bento-item h3 { margin: 0 0 10px 0; font-size: 1.4rem; }
-
-        /* Proceso */
-        .process { padding: 80px 8%; text-align: center; background: rgba(0,0,0,0.2); }
-        .steps { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-top: 50px; }
-        .step { flex: 1; min-width: 200px; }
-        .step-num { width: 40px; height: 40px; background: var(--vibrant-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: 800; }
-
-        /* Formulario Captación */
-        .registration { padding: 100px 8%; display: flex; flex-direction: column; align-items: center; }
-        
-        .form-card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(20px);
-            padding: 50px;
-            border-radius: 30px;
-            width: 100%;
-            max-width: 600px;
-            border: 1px solid rgba(255,255,255,0.1);
+        .form-container h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
         }
 
-        .form-card h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; }
-        
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; opacity: 0.8; }
-        .form-group input {
+        .input-group { margin-bottom: 15px; }
+        .input-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            color: var(--text-dim);
+        }
+
+        .input-group input {
             width: 100%;
             padding: 14px;
             background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px;
             color: white;
             font-size: 1rem;
             box-sizing: border-box;
+            transition: 0.3s;
         }
 
-        .form-group input:focus { border-color: var(--vibrant-green); outline: none; }
+        .input-group input:focus {
+            border-color: var(--vibrant-green);
+            outline: none;
+            background: rgba(0,0,0,0.5);
+        }
 
         .btn-submit {
             width: 100%;
             background: var(--vibrant-green);
             color: white;
-            padding: 18px;
+            padding: 16px;
             border: none;
             border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 800;
+            font-weight: 700;
+            font-size: 1rem;
             cursor: pointer;
+            margin-top: 10px;
             transition: 0.3s;
-            margin-top: 20px;
         }
 
-        .btn-submit:hover { background: #258d4d; box-shadow: 0 10px 20px rgba(28, 114, 62, 0.3); }
+        .btn-submit:active { transform: scale(0.98); }
 
-        .notice { margin-top: 20px; text-align: center; font-size: 0.85rem; opacity: 0.6; }
+        .form-footer {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            text-align: center;
+            color: var(--text-dim);
+            opacity: 0.7;
+        }
 
-        footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.7; }
-
-        @media (max-width: 768px) {
-            .form-card { padding: 30px; }
+        /* Responsive Desktop */
+        @media (min-width: 968px) {
+            .hero h1 { font-size: 3.5rem; }
+            .content-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+                padding: 40px 8%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .hero { padding: 80px 8% 20px; }
         }
     </style>
 </head>
-<body class="aurora-bg">
+<body>
+
+<div class="aurora"></div>
 
 <header>
-    <a href="#" class="logo">Fiao<span>Partners</span></a>
-    <a href="#afiliarse" class="btn-nav">Afiliar mi Tienda</a>
+    <a href="#" class="logo">CELULARES<span>FIAO</span></a>
+    <div style="font-size: 0.8rem; font-weight: 700; color: var(--vibrant-green);">PARTNERS</div>
 </header>
 
 <main>
     <section class="hero">
-        <h1>Vende más celulares<br><span>sin arriesgar tu capital.</span></h1>
-        <p>Convierte tu tienda de celulares en un punto de financiamiento autorizado. Nosotros ponemos el dinero, tú entregas el equipo y cobras al contado.</p>
-        <a href="#afiliarse" class="btn-nav" style="padding: 15px 40px; font-size: 1.1rem;">Empezar ahora</a>
+        <h1>Vende más. <br><span>Nosotros financiamos.</span></h1>
+        <p>Convierte tu tienda en un centro de préstamos. Sin trámites pesados y con cobro asegurado en 24h.</p>
     </section>
 
-    <section class="benefits-grid">
-        <div class="bento-item">
-            <i class="fas fa-wallet"></i>
-            <h3>Cobro 24h</h3>
-            <p>Recibe el pago total de tus equipos financiados en menos de 24 horas directamente en tu cuenta bancaria.</p>
-        </div>
-        <div class="bento-item">
-            <i class="fas fa-user-shield"></i>
-            <h3>Cero Riesgo</h3>
-            <p>Si el cliente no paga, nosotros asumimos la pérdida. Tu tienda siempre recibe su dinero completo.</p>
-        </div>
-        <div class="bento-item">
-            <i class="fas fa-chart-line"></i>
-            <h3>Más Tráfico</h3>
-            <p>Aparece en nuestro directorio oficial de tiendas y recibe clientes interesados en comprar a cuotas.</p>
-        </div>
-    </section>
-
-    <section class="process">
-        <h2>¿Cómo funciona el proceso?</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-num">1</div>
-                <h4>Regístrate</h4>
-                <p>Completa el formulario de afiliación con tus datos.</p>
+    <div class="content-grid">
+        <section class="benefits-section">
+            <div class="benefit-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3>Cobro al Contado</h3>
+                    <p>Tú entregas el equipo y nosotros te pagamos el valor completo de inmediato.</p>
+                </div>
             </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <h4>Recibe Accesos</h4>
-                <p>Te enviamos por correo tu usuario y clave del panel.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <h4>¡A vender!</h4>
-                <p>Crea solicitudes de tus clientes y aprueba en minutos.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="afiliarse" class="registration">
-        <div class="form-card">
-            <h2>Solicitud de Afiliación</h2>
-            <form action="#">
-                <div class="form-group">
-                    <label>Nombre del Negocio</label>
-                    <input type="text" placeholder="Ej. Tech Store RD" required>
+            <div class="benefit-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3>Cero Riesgo</h3>
+                    <p>No te preocupes por la cobranza. Celulares Fiao asume el riesgo crediticio.</p>
                 </div>
-                <div class="form-group">
-                    <label>RNC o Cédula</label>
-                    <input type="text" placeholder="001-XXXXXXX-X" required>
-                </div>
-                <div class="form-group">
-                    <label>Teléfono de Contacto (WhatsApp)</label>
-                    <input type="tel" placeholder="809 000 0000" required>
-                </div>
-                <div class="form-group">
-                    <label>Correo Electrónico (Para recibir tus credenciales)</label>
-                    <input type="email" placeholder="contacto@tutienda.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Ubicación / Ciudad</label>
-                    <input type="text" placeholder="Ej. Santiago, Centro" required>
-                </div>
+            </div>
 
-                <button type="submit" class="btn-submit">ENVIAR Y AFILIARME</button>
-                
-                <p class="notice">
-                    <i class="fas fa-info-circle"></i> Al hacer clic, validaremos tus datos. Recibirás un correo con tus credenciales de acceso una vez aprobado el registro.
-                </p>
-            </form>
-        </div>
-    </section>
+            <div class="benefit-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3>Usuario y Clave al Instante</h3>
+                    <p>Tras validar tus datos, recibirás tus credenciales por correo para empezar a vender.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="form-container">
+                <h2>Afiliar mi Tienda</h2>
+                <form action="#">
+                    <div class="input-group">
+                        <label>Nombre del Negocio</label>
+                        <input type="text" placeholder="Ej: Tech Cell RD" required>
+                    </div>
+                    <div class="input-group">
+                        <label>RNC o Cédula</label>
+                        <input type="text" placeholder="001-XXXXXXX-X" required>
+                    </div>
+                    <div class="input-group">
+                        <label>WhatsApp Corporativo</label>
+                        <input type="tel" placeholder="809 000 0000" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="tienda@correo.com" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">SOLICITAR AFILIACIÓN</button>
+                    
+                    <p class="form-footer">
+                        Validaremos tu solicitud manualmente. <br> Recibirás un correo de confirmación pronto.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </div>
 </main>
 
-<footer>
-    <p>&copy; 2026 Celulares Fiao S.R.L. | Red de Partners República Dominicana</p>
+<footer style="padding: 40px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; color: var(--text-dim);">
+    &copy; 2026 Celulares Fiao - Red de Socios | Santo Domingo, RD.
 </footer>
 
 </body>
