@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Celularesfiao Partners | La Red de Financiamiento #1 de RD y Colombia</title>
+    <title>Celularesfiao Partners | Red de Financiamiento RD & Colombia</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -24,91 +24,73 @@
             line-height: 1.6; overflow-x: hidden;
         }
 
-        /* Aurora Sutil */
         .aurora {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: radial-gradient(circle at 0% 0%, #031e40 0%, transparent 40%),
                         radial-gradient(circle at 100% 100%, #1c723e 15%, transparent 40%);
         }
 
-        /* Navbar */
+        /* NAVBAR - CORRECCIÓN DE BOTONES SUPERPUESTOS */
         header {
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 5%; display: flex; justify-content: space-between; align-items: center;
             background: rgba(1, 6, 13, 0.9); backdrop-filter: blur(15px);
             position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-glass);
         }
-        .logo { font-weight: 800; font-size: 1.2rem; text-decoration: none; color: #fff; }
+        .logo { font-weight: 800; font-size: 1rem; text-decoration: none; color: #fff; flex-shrink: 1; margin-right: 10px; }
         .logo span { color: var(--accent-green); }
 
-        .btn-acc { border: 1px solid var(--accent-green); color: var(--accent-green); padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.8rem; margin-right: 10px; }
-        .btn-afi { background: var(--accent-green); color: #fff; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.8rem; }
+        .nav-btns { display: flex; gap: 8px; flex-shrink: 0; }
+        .btn-acc { border: 1px solid var(--accent-green); color: var(--accent-green); padding: 7px 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.7rem; white-space: nowrap; }
+        .btn-afi { background: var(--accent-green); color: #fff; padding: 7px 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.7rem; white-space: nowrap; }
 
-        /* Hero */
-        .hero { padding: 60px 5% 40px; text-align: center; }
-        .hero h1 { font-size: 2.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+        /* HERO */
+        .hero { padding: 50px 5% 30px; text-align: center; }
+        .hero h1 { font-size: 2.2rem; line-height: 1.1; margin-bottom: 15px; font-weight: 800; }
         .hero h1 span { color: var(--accent-green); }
-        .hero p { font-size: 1.1rem; color: var(--text-gray); max-width: 600px; margin: 0 auto 30px; }
+        .hero p { font-size: 1rem; color: var(--text-gray); max-width: 500px; margin: 0 auto 25px; }
 
-        /* Stats Dashboard Style */
-        .stats-grid { 
-            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 5% 40px;
-        }
-        .stat-item { 
-            background: rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; 
-            border: 1px solid var(--border-glass); text-align: center;
-        }
-        .stat-item h2 { font-size: 1.8rem; margin: 0; color: var(--accent-green); }
-        .stat-item p { font-size: 0.75rem; margin: 5px 0 0; color: var(--text-gray); font-weight: 700; text-transform: uppercase; }
+        /* STATS COMPACTAS */
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 5% 30px; }
+        .stat-item { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid var(--border-glass); text-align: center; }
+        .stat-item h2 { font-size: 1.4rem; margin: 0; color: var(--accent-green); }
+        .stat-item p { font-size: 0.65rem; margin-top: 4px; color: var(--text-gray); font-weight: 700; text-transform: uppercase; }
 
-        /* Beneficios Robustos */
-        .section-label { color: var(--accent-green); font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; display: block; margin-bottom: 10px; }
+        /* BENEFICIOS - MODO ACORDEÓN (EVITA QUE SEA ETERNO) */
+        .benefits-section { padding: 40px 5%; }
+        .section-label { color: var(--accent-green); font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; display: block; margin-bottom: 20px; }
         
-        .benefits-robust { padding: 60px 5%; background: rgba(255,255,255,0.01); }
-        .benefit-card { margin-bottom: 30px; display: flex; gap: 20px; }
-        .benefit-card i { font-size: 1.5rem; color: var(--accent-green); background: rgba(46, 204, 113, 0.1); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0; }
-        .benefit-card h3 { margin: 0 0 10px 0; font-size: 1.3rem; }
-        .benefit-card p { margin: 0; color: var(--text-gray); font-size: 0.95rem; }
+        details { background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+        summary { padding: 18px; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '\f0fe'; font-family: "Font Awesome 5 Free"; font-weight: 900; color: var(--accent-green); transition: 0.3s; }
+        details[open] summary::after { content: '\f146'; }
+        details[open] summary { background: rgba(46, 204, 113, 0.1); border-bottom: 1px solid var(--border-glass); }
+        .details-content { padding: 18px; color: var(--text-gray); font-size: 0.9rem; line-height: 1.5; }
 
-        /* Expansión Limpia */
-        .expansion-clean { padding: 60px 5%; border-top: 1px solid var(--border-glass); }
-        .expansion-clean h2 { font-size: 2rem; margin-bottom: 25px; }
-        .flag-box { display: flex; gap: 15px; margin-bottom: 30px; }
-        .flag { background: var(--card-glass); padding: 10px 20px; border-radius: 12px; border: 1px solid var(--border-glass); display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        /* FORMULARIO */
+        .form-section { padding: 40px 5% 80px; }
+        .form-container { background: #020c18; border: 1px solid var(--border-glass); padding: 30px 20px; border-radius: 20px; }
+        .form-container h2 { font-size: 1.5rem; text-align: center; margin-top: 0; }
+        
+        .field { margin-bottom: 15px; }
+        .field label { display: block; font-size: 0.8rem; margin-bottom: 5px; color: var(--accent-green); font-weight: 700; }
+        .field input, .field select { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 10px; color: #fff; font-size: 1rem; }
 
-        /* Formulario Captación */
-        .form-section { padding: 60px 5%; }
-        .form-container { 
-            background: #020c18; border: 1px solid var(--border-glass); 
-            padding: 40px 25px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-        .form-container h2 { font-size: 1.8rem; margin-top: 0; text-align: center; }
-        .form-container p { text-align: center; color: var(--text-gray); margin-bottom: 30px; }
+        .btn-main { width: 100%; background: var(--accent-green); color: #fff; padding: 16px; border: none; border-radius: 10px; font-weight: 800; font-size: 1rem; cursor: pointer; }
 
-        .field { margin-bottom: 20px; }
-        .field label { display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--accent-green); font-weight: 700; }
-        .field input, .field select { 
-            width: 100%; padding: 15px; background: rgba(255,255,255,0.05); 
-            border: 1px solid var(--border-glass); border-radius: 12px; color: #fff; font-size: 1rem;
-        }
-
-        .btn-main { 
-            width: 100%; background: var(--accent-green); color: #fff; padding: 18px; 
-            border: none; border-radius: 12px; font-weight: 800; font-size: 1rem; cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-main:active { transform: scale(0.97); }
-
-        /* Desktop Adjustments */
+        /* DESKTOP ADJUSTMENTS */
         @media (min-width: 968px) {
             header { padding: 15px 8%; }
-            .hero { padding: 100px 8%; }
+            .logo { font-size: 1.4rem; }
+            .nav-btns { gap: 15px; }
+            .btn-acc, .btn-afi { font-size: 0.9rem; padding: 10px 20px; }
             .hero h1 { font-size: 4rem; }
             .stats-grid { grid-template-columns: repeat(4, 1fr); padding: 0 8% 60px; }
-            .benefits-robust { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; padding: 100px 8%; }
-            .form-container { max-width: 600px; margin: 0 auto; padding: 50px; }
+            .benefits-section { max-width: 800px; margin: 0 auto; }
+            .form-container { max-width: 500px; margin: 0 auto; padding: 40px; }
         }
 
-        footer { padding: 40px 5%; text-align: center; border-top: 1px solid var(--border-glass); font-size: 0.8rem; color: var(--text-gray); }
+        footer { padding: 30px; text-align: center; border-top: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-gray); }
     </style>
 </head>
 <body>
@@ -116,8 +98,8 @@
     <div class="aurora"></div>
 
     <header>
-        <a href="index.html" class="logo">Celularesfiao<span>Partners</span></a>
-        <div>
+        <a href="index.html" class="logo">CF<span>Partners</span></a>
+        <div class="nav-btns">
             <a href="Acceder.html" class="btn-acc">ACCEDER</a>
             <a href="#registro" class="btn-afi">AFILIARME</a>
         </div>
@@ -125,123 +107,88 @@
 
     <main>
         <section class="hero">
-            <span class="section-label">Red de Financiamiento Global</span>
-            <h1>Multiplica tus ventas <br><span>al contado.</span></h1>
-            <p>Nosotros ponemos el capital y el riesgo. Tú pones los equipos y recibes tus ganancias en tiempo récord.</p>
+            <span class="section-label">Plataforma B2B</span>
+            <h1>Ventas al contado, <br><span>cobro inmediato.</span></h1>
+            <p>Únete a la red de financiamiento móvil más robusta de Latam. Tú entregas el equipo, nosotros el dinero.</p>
         </section>
 
         <section class="stats-grid">
-            <div class="stat-item">
-                <h2>+500</h2>
-                <p>Tiendas en RD</p>
-            </div>
-            <div class="stat-item">
-                <h2>100%</h2>
-                <p>Cero Riesgo</p>
-            </div>
-            <div class="stat-item">
-                <h2>24h</h2>
-                <p>Liquidación</p>
-            </div>
-            <div class="stat-item">
-                <h2>15min</h2>
-                <p>Aprobación</p>
-            </div>
+            <div class="stat-item"><h2>+500</h2><p>Tiendas RD</p></div>
+            <div class="stat-item"><h2>24h</h2><p>Liquidación</p></div>
+            <div class="stat-item"><h2>100%</h2><p>Cero Riesgo</p></div>
+            <div class="stat-item"><h2>RD & CO</h2><p>Presencia</p></div>
         </section>
 
-        <section class="benefits-robust">
-            <div class="benefit-card">
-                <i class="fas fa-money-bill-wave"></i>
-                <div>
-                    <h3>Venta al Contado Real</h3>
-                    <p>Aunque el cliente pague a cuotas, tu tienda recibe el valor total del equipo en menos de 24 horas. Sin esperas, sin cuotas para ti.</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <i class="fas fa-shield-alt"></i>
-                <div>
-                    <h3>Asunción Total de Riesgo</h3>
-                    <p>Celularesfiao asume el 100% del riesgo de cobro. Si el cliente no paga, tu ganancia está garantizada y protegida por nosotros.</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <i class="fas fa-chart-line"></i>
-                <div>
-                    <h3>Dinamiza tu Inventario</h3>
-                    <p>Siete de cada diez clientes no pueden pagar un equipo de gama alta al contado. Al ofrecer cuotas, desbloqueas ese 70% del mercado.</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <i class="fas fa-check-double"></i>
-                <div>
-                    <h3>Iniciales desde RD$100</h3>
-                    <p>Baja la barrera de entrada. Permite que tus clientes se lleven su móvil con un inicial simbólico y paga el resto en cuotas cómodas.</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <i class="fas fa-history"></i>
-                <div>
-                    <h3>Saldos Anticipados</h3>
-                    <p>Tus clientes pueden pagar su deuda antes de tiempo sin penalidades, lo que aumenta la satisfacción y la recurrencia en tu tienda.</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <i class="fas fa-tools"></i>
-                <div>
-                    <h3>Garantía Activa</h3>
-                    <p>Brindamos soporte y garantía mientras el financiamiento esté activo, dándole paz mental tanto a la tienda como al cliente final.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="expansion-clean">
-            <span class="section-label">Presencia Internacional</span>
-            <h2>Liderando el mercado en <span style="color:var(--accent-green)">RD y Colombia.</span></h2>
-            <p style="color:var(--text-gray); margin-bottom: 30px;">Somos la plataforma de financiamiento móvil con mayor crecimiento en el Caribe y Sudamérica.</p>
+        <section class="benefits-section">
+            <span class="section-label">Nuestra Propuesta de Valor</span>
             
-            <div class="flag-box">
-                <div class="flag"><i class="fas fa-map-marker-alt"></i> Rep. Dominicana</div>
-                <div class="flag"><i class="fas fa-map-marker-alt"></i> Colombia</div>
-            </div>
+            <details open>
+                <summary>Venta al Contado Real</summary>
+                <div class="details-content">
+                    Aunque el cliente pague a cuotas, tu tienda recibe el valor total del equipo en menos de 24 horas laborables directamente en tu cuenta bancaria.
+                </div>
+            </details>
+
+            <details>
+                <summary>Cero Riesgo Crediticio</summary>
+                <div class="details-content">
+                    Asumimos el 100% del riesgo de cobro. Si el cliente se atrasa, es nuestra responsabilidad. Tu ganancia está protegida y garantizada.
+                </div>
+            </details>
+
+            <details>
+                <summary>Dinamiza tu Inventario</summary>
+                <div class="details-content">
+                    Siete de cada diez clientes no pueden pagar un equipo de gama alta al contado. Al ofrecer cuotas, desbloqueas ese 70% del mercado potencial.
+                </div>
+            </details>
+
+            <details>
+                <summary>Iniciales desde RD$100</summary>
+                <div class="details-content">
+                    Baja la barrera de entrada. Permite que tus clientes estrenen móvil con un inicial simbólico, facilitando el cierre de la venta en el mostrador.
+                </div>
+            </details>
+
+            <details>
+                <summary>Garantía y Soporte Activo</summary>
+                <div class="details-content">
+                    Brindamos soporte técnico y respaldo de garantía mientras el financiamiento esté activo, asegurando la satisfacción total del cliente final.
+                </div>
+            </details>
         </section>
 
         <section id="registro" class="form-section">
             <div class="form-container">
                 <h2>Afiliar mi Tienda</h2>
-                <p>Completa los datos y recibe tus claves de acceso para empezar a vender hoy mismo.</p>
                 <form>
                     <div class="field">
-                        <label>País de Operación</label>
+                        <label>País</label>
                         <select required>
                             <option>República Dominicana</option>
                             <option>Colombia</option>
                         </select>
                     </div>
                     <div class="field">
-                        <label>Nombre de la Tienda</label>
-                        <input type="text" placeholder="Ej: Santo Domingo Cell" required>
+                        <label>Nombre Comercial</label>
+                        <input type="text" placeholder="Ej: Tech Store" required>
                     </div>
                     <div class="field">
-                        <label>WhatsApp Contacto</label>
-                        <input type="tel" placeholder="809 000 0000" required>
+                        <label>WhatsApp</label>
+                        <input type="tel" placeholder="809-000-0000" required>
                     </div>
                     <div class="field">
-                        <label>Correo Electrónico (Recibirás tus claves aquí)</label>
+                        <label>Email para Credenciales</label>
                         <input type="email" placeholder="tienda@empresa.com" required>
                     </div>
-                    <button type="submit" class="btn-main">SOLICITAR AFILIACIÓN</button>
+                    <button type="submit" class="btn-main">ENVIAR SOLICITUD</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Celularesfiao Partners International. <br> Todos los derechos reservados.</p>
+        &copy; 2026 Celularesfiao Partners.
     </footer>
 
 </body>
